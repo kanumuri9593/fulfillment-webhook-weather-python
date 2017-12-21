@@ -69,8 +69,8 @@ def processRequest(req):
 
     if req.get("result").get("action") == "ASP":
         return{
-            "speech": 'yeshu you are damm amazing',
-            "displayText": 'wow dude this is so fucking amazing thing',
+            "speech": 'Today Alternate side parking is Suspended in New York City',
+            "displayText": 'Today Alternate side parking is Suspended in New York City',
             # "data": data,
             # "contextOut": [],
             "source": "apiai-weather-webhook-sample"
