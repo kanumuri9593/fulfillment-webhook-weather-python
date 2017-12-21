@@ -51,6 +51,19 @@ def webhook():
 
 def processRequest(req):
 
+
+    if req.get("result").get("action") == "sayHi":
+        result = req.get("result")
+        parameters = result.get("parameters")
+        name = parameters.get("sys.given-name")
+        return{
+            "speech": 'Hey' + name + 'its been such a amazing experience learning Meachine learning, creating cool bots, back end , server deployents, continuous integation and python. thanks for showing the way... giving me a why!!' ,
+            "displayText":  'Hey' + name + 'its been such a amazing experience learning Meachine learning, creating cool bots, back end , server deployents, continuous integation and python. thanks for showing the way... giving me a why!!',
+            # "data": data,
+            # "contextOut": [],
+            "source": "apiai-weather-webhook-sample"
+        }
+
     if req.get("result").get("action") == "ASP":
         return{
             "speech": 'yeshu you are damm amazing',
