@@ -50,6 +50,16 @@ def webhook():
 
 
 def processRequest(req):
+
+    if req.get("result").get("action") == "ASP":
+        return{
+            "speech": 'yeshu you are damm amazing',
+            "displayText": 'wow dude this is so fucking amazing thing',
+            # "data": data,
+            # "contextOut": [],
+            "source": "apiai-weather-webhook-sample"
+        }
+
     if req.get("result").get("action") != "yahooWeatherForecast":
         return {}
     baseurl = "https://query.yahooapis.com/v1/public/yql?"
