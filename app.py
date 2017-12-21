@@ -55,7 +55,7 @@ def processRequest(req):
     if req.get("result").get("action") == "sayHi":
         result = req.get("result")
         parameters = result.get("parameters")
-        name = parameters.get("sys.given-name")
+        name = parameters.get("given-name")
         return{
             "speech": 'Hey' + name + 'its been such a amazing experience learning Meachine learning, creating cool bots, back end , server deployents, continuous integation and python. thanks for showing the way... giving me a why!!' ,
             "displayText":  'Hey' + name + 'its been such a amazing experience learning Meachine learning, creating cool bots, back end , server deployents, continuous integation and python. thanks for showing the way... giving me a why!!',
