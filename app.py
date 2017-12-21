@@ -54,7 +54,8 @@ def processRequest(req):
 
     if req.get("result").get("action") == "sayHi":
         result = req.get("result")
-        device = req.get("device")
+        originalRequest = req.get("originalRequest")
+        device = originalRequest.get("device")
         formatted_address = device.get("formatted_address")
         parameters = result.get("parameters")
         name = parameters.get("given-name")
