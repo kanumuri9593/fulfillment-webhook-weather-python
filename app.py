@@ -54,11 +54,13 @@ def processRequest(req):
 
     if req.get("result").get("action") == "sayHi":
         result = req.get("result")
+        device = req.get("device")
+        formatted_address = device.get("formatted_address")
         parameters = result.get("parameters")
         name = parameters.get("given-name")
         return{
-            "speech": 'Hey' + name + 'its been such a amazing experience learning Meachine learning, creating cool bots, back end , server deployents, continuous integation and python. thanks for showing the way... giving me a why!!' ,
-            "displayText":  'Hey' + name + 'its been such a amazing experience learning Meachine learning, creating cool bots, back end , server deployents, continuous integation and python. thanks for showing the way... giving me a why!!',
+            "speech": 'Hey' + name + ' its been such a amazing experience learning Machine learning, creating cool bots, writing API for backend , server deployments, continuous integation and python. thanks for showing the way... giving me a why!!' + formatted_address ,
+            "displayText":  'Hey' + name + 'its been such a amazing experience learning Machine learning, creating cool bots, writing API for backend , server deployments, continuous integation and python. thanks for showing the way... giving me a why!!' + formatted_address,
             # "data": data,
             # "contextOut": [],
             "source": "apiai-weather-webhook-sample"
